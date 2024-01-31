@@ -1,0 +1,103 @@
+Description: Default config changes for Debian
+ Use debian-menu, wider range of icons, use a red themed start menu logo and
+ limit its height.
+Author: Samuel Henrique <samueloph@debian.org>
+Last-Update: 2016-03-29
+Index: jwm-2.3.5/example.jwmrc
+===================================================================
+--- jwm-2.3.5.orig/example.jwmrc
++++ jwm-2.3.5/example.jwmrc
+@@ -3,24 +3,8 @@
+ 
+     <!-- The root menu. -->
+     <RootMenu onroot="12">
++        <Include>/etc/jwm/debian-menu</Include>
+         <Program icon="terminal.png" label="Terminal">xterm</Program>
+-        <Menu icon="folder.png" label="Applications">
+-            <Program icon="music.png" label="Audacious">audacious</Program>
+-            <Program icon="calculator.png" label="Calculator">xcalc</Program>
+-            <Program icon="gimp.png" label="Gimp">gimp</Program>
+-            <Program icon="chat.png" label="Pidgin">pidgin</Program>
+-            <Program icon="www.png" label="Firefox">firefox</Program>
+-            <Program icon="editor.png" label="XEdit">xedit</Program>
+-        </Menu>
+-        <Menu icon="folder.png" label="Utilities">
+-            <Program icon="font.png" label="Fonts">xfontsel</Program>
+-            <Program icon="window.png" label="Window Properties">
+-                xprop | xmessage -file -
+-            </Program>
+-            <Program icon="window.png" label="Window Information">
+-                xwininfo | xmessage -file -
+-            </Program>
+-        </Menu>
+         <Separator/>
+         <Program icon="lock.png" label="Lock">
+             xlock -mode blank
+@@ -46,9 +30,9 @@
+     </Group>
+ 
+     <!-- Tray at the bottom. -->
+-    <Tray x="0" y="-1" autohide="off">
++    <Tray x="0" y="-1" height="25" autohide="off">
+ 
+-        <TrayButton icon="jwm-blue">root:1</TrayButton>
++        <TrayButton icon="/usr/share/jwm/jwm-red.svg">root:1</TrayButton>
+         <Spacer width="2"/>
+         <TrayButton label="_">showdesktop</TrayButton>
+         <Spacer width="2"/>
+@@ -117,9 +101,52 @@
+          IconPath can be listed multiple times to allow searching
+          for icons in multiple paths.
+       -->
+-    <IconPath>
+-        /usr/share/icons/wm-icons/32x32-aquafusion
+-    </IconPath>
++    <IconPath>/usr/share/icons/gnome/256x256/actions</IconPath>
++    <IconPath>/usr/share/icons/gnome/256x256/apps</IconPath>
++    <IconPath>/usr/share/icons/gnome/256x256/categories</IconPath>
++    <IconPath>/usr/share/icons/gnome/256x256/devices</IconPath>
++    <IconPath>/usr/share/icons/gnome/256x256/emblems</IconPath>
++    <IconPath>/usr/share/icons/gnome/256x256/mimetypes</IconPath>
++    <IconPath>/usr/share/icons/gnome/256x256/places</IconPath>
++    <IconPath>/usr/share/icons/gnome/256x256/status</IconPath>
++    <IconPath>/usr/share/icons/gnome/32x32/actions</IconPath>
++    <IconPath>/usr/share/icons/gnome/32x32/animations</IconPath>
++    <IconPath>/usr/share/icons/gnome/32x32/apps</IconPath>
++    <IconPath>/usr/share/icons/gnome/32x32/categories</IconPath>
++    <IconPath>/usr/share/icons/gnome/32x32/devices</IconPath>
++    <IconPath>/usr/share/icons/gnome/32x32/emblems</IconPath>
++    <IconPath>/usr/share/icons/gnome/32x32/mimetypes</IconPath>
++    <IconPath>/usr/share/icons/gnome/32x32/places</IconPath>
++    <IconPath>/usr/share/icons/gnome/32x32/status</IconPath>
++    <IconPath>/usr/share/icons/gnome/scalable/actions</IconPath>
++    <IconPath>/usr/share/icons/gnome/scalable/apps</IconPath>
++    <IconPath>/usr/share/icons/gnome/scalable/categories</IconPath>
++    <IconPath>/usr/share/icons/gnome/scalable/devices</IconPath>
++    <IconPath>/usr/share/icons/gnome/scalable/emblems</IconPath>
++    <IconPath>/usr/share/icons/gnome/scalable/mimetypes</IconPath>
++    <IconPath>/usr/share/icons/gnome/scalable/places</IconPath>
++    <IconPath>/usr/share/icons/gnome/scalable/status</IconPath>
++    <IconPath>/usr/share/icons/hicolor/256x256/apps</IconPath>
++    <IconPath>/usr/share/icons/hicolor/256x256/mimetypes</IconPath>
++    <IconPath>/usr/share/icons/hicolor/32x32/actions</IconPath>
++    <IconPath>/usr/share/icons/hicolor/32x32/apps</IconPath>
++    <IconPath>/usr/share/icons/hicolor/32x32/categories</IconPath>
++    <IconPath>/usr/share/icons/hicolor/32x32/devices</IconPath>
++    <IconPath>/usr/share/icons/hicolor/32x32/emblems</IconPath>
++    <IconPath>/usr/share/icons/hicolor/32x32/mimetypes</IconPath>
++    <IconPath>/usr/share/icons/hicolor/32x32/status</IconPath>
++    <IconPath>/usr/share/icons/hicolor/512x512/apps</IconPath>
++    <IconPath>/usr/share/icons/hicolor/512x512/mimetypes</IconPath>
++    <IconPath>/usr/share/icons/hicolor/scalable/actions</IconPath>
++    <IconPath>/usr/share/icons/hicolor/scalable/apps</IconPath>
++    <IconPath>/usr/share/icons/hicolor/scalable/categories</IconPath>
++    <IconPath>/usr/share/icons/hicolor/scalable/devices</IconPath>
++    <IconPath>/usr/share/icons/hicolor/scalable/emblems</IconPath>
++    <IconPath>/usr/share/icons/hicolor/scalable/mimetypes</IconPath>
++    <IconPath>/usr/share/icons/hicolor/scalable/places</IconPath>
++    <IconPath>/usr/share/icons/hicolor/scalable/status</IconPath>
++    <IconPath>/usr/share/icons</IconPath>
++    <IconPath>/usr/share/pixmaps</IconPath>
+     <IconPath>
+         /usr/local/share/jwm
+     </IconPath>

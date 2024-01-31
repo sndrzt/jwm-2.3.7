@@ -1,0 +1,43 @@
+Source: jwm
+Section: x11
+Priority: optional
+Maintainer: Samuel Henrique <samueloph@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               libcairo2-dev,
+               libfribidi-dev,
+               libjpeg-dev | libjpeg9-dev,
+               libpng-dev,
+               librsvg2-dev,
+               libxext-dev,
+               libxft-dev,
+               libxinerama-dev,
+               libxmu-dev,
+               libxpm-dev,
+               libxrender-dev
+Standards-Version: 4.4.1
+Rules-Requires-Root: no
+Homepage: http://joewing.net/projects/jwm/
+Vcs-Browser: https://salsa.debian.org/debian/jwm
+Vcs-Git: https://salsa.debian.org/debian/jwm.git
+
+Package: jwm
+Provides: x-window-manager
+Architecture: any
+Depends: rxvt-unicode-256color | rxvt-unicode | rxvt-unicode-lite |
+         gnome-terminal | konsole | x-terminal-emulator,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: menu
+Suggests: x11-apps
+Description: very small lightweight pure X11 window manager with tray and menus
+ Low resource Window manager ideal for older PCs. It uses a minimum of
+ external libraries, thus very little memory, includes virtual screens,
+ menubar and root-menu popup.
+ .
+ JWM is a window manager for the X11 Window System. JWM is written in
+ C and uses only Xlib and (optionally) the shape extension and libXpm.
+ It can support some MWM, GNOME, and WM Spec hints. The menu configuration
+ files are managed in XML format.
+ .
+ Compared to other light WM, like FVWM or Openbox, the Jwm consumes
+ considerably less memory while providing the same functionality.

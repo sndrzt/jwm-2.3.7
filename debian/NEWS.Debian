@@ -1,0 +1,39 @@
+jwm (2.3.4-1) unstable; urgency=medium
+
+  * There is a high chance that this upgrade will break your jwmrc config
+    file if you're using any versions prior to 2.2, so please review your
+    config file.
+  * There is a xslt you can use to migrate from 2.2 config files to 2.3 ones,
+    you can find it on usr/lib/jwm/jwm-2.3.xslt.
+  * The way windows are associated with groups has changed. Now within
+    a Group tag, if one or more Name tags is specified, a client window
+    must match at least one to be considered part of the group. Likewise,
+    if one or more Class tags is specified, a program must match at 
+    least one. If no tag is specified, all client windows will match.
+  * The name and class fields in Group tags are now treated as POSIX
+    regular expressions.
+  * The number of supported window layers has been reduced to 3. Rather 
+    than a number between 0 and 12, JWM now uses above, normal, and below.
+  * Jwm no longer allows custom window buttons. These buttons are now 
+    custom drawn to an appropriate size using X graphics primitives.
+  * The information in TrayButtonStyle is now inherited from TrayStyle 
+    instead of TaskListStyle. This means that tray buttons now get 
+    defaults from the tray instead of from the task list. In addition,
+    it is now possible to specify ActiveBackground and ActiveForeground
+    in TrayStyle. This makes it possible to set defaults for both tray
+    buttons and task list buttons in TrayStyle.
+  * The ActiveBackground and ActiveForeground tags have been replaced by
+    Background and Foreground nested under the Active tag.  This applies
+    to TrayStyle, TaskListStyle, TrayButtonStyle, PagerStyle, and MenuStyle.
+  * The Inactive tag under WindowStyle has been removed.  The tags that
+    used to go within this tag now go directly under the WindowStyle tag.
+  * The autohide attribute in Tray now selects where the tray should be
+    hidden (left, right, top, bottom, or off) instead of true or false.
+  * Now actions in the Clock tag must be prefixed with "exec:" to run
+    an external program.
+  * The TaskListStyle, TrayButtonStyle, and ClockStyle tags have been removed.
+    These options are not set from TrayStyle.
+  * The background icon location has changed from
+    $HOME/bg.xpm to $HOME/jwm-bg.xpm
+
+ -- Samuel Henrique <samueloph@debian.org>  Sun, 13 Mar 2016 20:05:26 -0300

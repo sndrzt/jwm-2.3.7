@@ -1,0 +1,5 @@
+contrib/Makefile
+po/Makefile
+po/Makefile.in
+po/stamp-po
+po/*.gmo

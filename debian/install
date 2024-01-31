@@ -1,0 +1,4 @@
+debian/*.desktop		usr/share/xsessions
+debian/jwm-poweroff.sh		usr/lib/jwm
+debian/jwm-red.svg		usr/share/jwm
+xslt/jwm-2.3.xslt		usr/lib/jwm
